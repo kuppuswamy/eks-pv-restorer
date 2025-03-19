@@ -1,0 +1,26 @@
+{
+  "name": "onecare-pv-restorer",
+  "version": "0.0.1",
+  "description": "OneCare persistent volumes restorer.",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.109",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^22.13.10",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "@aws-sdk/client-ec2": "^3.226.0",
+    "@aws-sdk/client-eks": "^3.226.0",
+    "aws-lambda": "^1.0.7",
+    "cdk8s": "^2.5.72",
+    "cdk8s-plus-26": "^2.3.32",
+    "execa": "^6.1.0",
+    "js-yaml": "^4.1.0"
+  }
+}
