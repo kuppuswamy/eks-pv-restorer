@@ -1,7 +1,7 @@
 {
-  "name": "onecare-pv-restorer",
+  "name": "eks-pv-restorer",
   "version": "0.0.1",
-  "description": "OneCare persistent volumes restorer.",
+  "description": "EKS PV Restorer is an AWS Lambda that restores the Persistent Volumes after the EKS cluster is recreated and attaches them to the appropriate Persistent Volume Claims.",
   "main": "handler.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
