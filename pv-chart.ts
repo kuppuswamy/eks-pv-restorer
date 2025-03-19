@@ -20,16 +20,11 @@ export class PersistentVolumesChart extends Chart {
       assert(pvcName);
       assert(pvcNamespace);
       assert(volume.Size);
-      const hyphenSeparatedValues = pvcName.split('-');
-      const pvcLabel = hyphenSeparatedValues[2];
       new k.ApiObject(this, name, {
         apiVersion: 'v1',
         kind: 'PersistentVolume',
         metadata: {
-          name: name,
-          labels: pvcName.endsWith('pgdata') ? {
-            'pgo-postgres-cluster': `${pvcNamespace}-${pvcLabel}`
-          } : undefined
+          name: name
         },
         spec: {
           accessModes: [
@@ -60,7 +55,7 @@ export class PersistentVolumesChart extends Chart {
               ]
             }
           },
-          claimRef: pvcName.endsWith('pgdata') ? null : {
+          claimRef: {
             name: pvcName,
             namespace: pvcNamespace
           }
